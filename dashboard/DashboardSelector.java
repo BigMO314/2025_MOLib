@@ -4,7 +4,6 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.util.sendable.SendableRegistry;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilderImpl;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import frc.molib.Console;
 
 /**
  * <p>Creates an option selector in dashboard</p>
@@ -39,7 +38,6 @@ public class DashboardSelector<OptionEnum extends Enum<OptionEnum> & DashboardOp
 	 * Must be run at the start, <i>but after NetworkTables has connected,</i> for it to appear in NetworkTables
 	 */
 	public void init() {
-		Console.logMsg("Selector Init - " + mKey);
 		NetworkTable tblData = mParentTable.getSubTable(mKey);
 		SendableBuilderImpl builder = new SendableBuilderImpl();
 		builder.setTable(tblData);
